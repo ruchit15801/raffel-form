@@ -2,18 +2,22 @@ const Raffel = require("../model/raffel");
 
 const newRaffel = async (req, res) => {
   try {
-    const { RaffelStartDate, RaffelEndDate, TicketSupply, TicketPrice } =
-      req.body;
+    const { RaffelEndDate, TicketSupply, TicketPrice, Url } = req.body;
+
+    // const url_check = await Raffel.find({ Url });
+    // if (url_check) return res.status(200).send({ data: "data already added" });
+
     const user = await new Raffel({
-      RaffelStartDate,
       RaffelEndDate,
+      Url,
       TicketSupply,
       TicketPrice,
     }).save();
+
     if (!user) {
       return res.status(200).send({ data: "not found" });
     }
-    // await user.save();
+
     return res.status(200).send({ data: user });
   } catch (e) {
     console.log(e);

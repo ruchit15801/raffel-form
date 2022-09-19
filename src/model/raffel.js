@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 
 const raffelSchema = new mongoose.Schema({
-  RaffelStartDate: {
-    type: Date,
-    required: true,
-  },
   RaffelEndDate: {
     type: Date,
     required: true,
+  },
+  Url: {
+    type: String,
+    required: true,
+    unique: true,
   },
   TicketSupply: {
     type: Number,
@@ -15,7 +16,6 @@ const raffelSchema = new mongoose.Schema({
   },
   TicketPrice: {
     type: Number,
-    default: "$",
     required: true,
   },
 });

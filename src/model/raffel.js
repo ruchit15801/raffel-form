@@ -18,6 +18,10 @@ const raffelSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  nft_name: {
+    type: String,
+    required: true,
+  },
 });
 
 const nftRaffel = new mongoose.model("nftRaffel", raffelSchema);

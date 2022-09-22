@@ -1,29 +1,33 @@
 const mongoose = require("mongoose");
 
 const raffelSchema = new mongoose.Schema({
-  RaffelEndDate: {
+  raffel_end_date: {
     type: Date,
     required: true,
   },
-  Url: {
+  url: {
     type: String,
     required: true,
     unique: true,
   },
-  TicketSupply: {
+  ticket_supply: {
     type: Number,
     required: true,
   },
-  TicketPrice: {
+  ticket_remaining: {
     type: Number,
     required: true,
   },
-  nft_name: {
+  ticket_price: {
+    type: Number,
+    required: true,
+  },
+  token_address: {
     type: String,
     required: true,
-  },
+  }
 });
 
-const nftRaffel = new mongoose.model("nftRaffel", raffelSchema);
+const nftRaffel = new mongoose.model("Raffel", raffelSchema);
 
 module.exports = nftRaffel;

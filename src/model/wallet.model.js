@@ -9,16 +9,18 @@ const WalletUserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },  
-  nft_name: {
-    type: String,
-    required: true,
-  },
-  token_address: {
-    type: String,
-    required: true,
-  }
+  nfts: [{
+      nft_name: {
+      type: String,
+      required: true,
+    },
+    token_address: {
+      type: String,
+      required: true,
+    }
+  }]
 });
 
 const WalletUser = mongoose.model("WalletUser", WalletUserSchema);
 
-module.exports = WalletUser;
+module.exports = WalletUser;  

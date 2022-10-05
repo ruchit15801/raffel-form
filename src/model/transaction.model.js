@@ -1,17 +1,25 @@
 const mongoose = require("mongoose");
 
 const transactionSchema = new mongoose.Schema({
-  buyers_wallet: {
+  buyers_wallet:{
+    type: String,
+    required: true
+  },
+  src: {
     type: String,
     required: true,
   },
-  quantity: {
+  txHash: {
+    type: String,
+    required: true,
+  },
+  blockTime: {
     type: Number,
     required: true,
   },
-  token_address: {
-    type: String,
-    required: true,
+  totalTickes: {
+    type: Number,
+    // required: true,
   }
 });
 

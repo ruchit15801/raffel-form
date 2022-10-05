@@ -5,7 +5,7 @@ require("./src/db/mongodb");
 const router = require("./src/router/nftraffel");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin:true, credentials: true}));
 app.use("/", router);
 
 // server port define

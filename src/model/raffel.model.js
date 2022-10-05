@@ -8,7 +8,7 @@ const raffelSchema = new mongoose.Schema({
   url: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
   },
   ticket_supply: {
     type: Number,
@@ -25,6 +25,14 @@ const raffelSchema = new mongoose.Schema({
   token_address: {
     type: String,
     required: true,
+  },
+  wallet_address: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: Boolean,
+    default: true
   }
 });
 
